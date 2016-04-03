@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,6 +25,16 @@
             <Font name="Lucida Grande Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="btnBack" layoutX="70.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleAction" text="Button" />
+      <Button fx:id="btnBack" layoutX="541.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleAction" text="Button" />
+      <ChoiceBox fx:id="cbFrom" layoutX="62.0" layoutY="110.0" prefHeight="27.0" prefWidth="180.0" />
+      <ChoiceBox fx:id="cbTo" layoutX="347.0" layoutY="110.0" prefHeight="27.0" prefWidth="180.0" />
+      <Label layoutX="123.0" layoutY="83.0" text="Resa från" />
+      <Label layoutX="413.0" layoutY="83.0" text="Resa till" />
+      <TableView layoutX="62.0" layoutY="167.0" prefHeight="200.0" prefWidth="465.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

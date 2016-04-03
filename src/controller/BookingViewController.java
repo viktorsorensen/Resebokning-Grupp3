@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,8 +23,17 @@ public class BookingViewController implements Initializable {
     @FXML
     private Button btnBack;
 
+    @FXML
+    private ChoiceBox cbFrom;
+
+    @FXML
+    private ChoiceBox cbTo;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        cbFrom.setItems(FXCollections.observableArrayList("Ängelholm", "Malmö", "Helsingborg"));
+        cbTo.setItems(FXCollections.observableArrayList("Mexiko", "Danmark", "Finland"));
 
     }
 
