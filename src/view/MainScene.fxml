@@ -16,12 +16,12 @@
             <Image url="@../resources/transport.png" />
          </image>
       </ImageView>
-      <Label layoutX="62.0" layoutY="18.0" text="Resebolag" textFill="WHITE">
+      <Label layoutX="62.0" layoutY="18.0" text="vihana Resebolag" textFill="WHITE">
          <font>
             <Font name="Lucida Grande Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="btnNext" layoutX="62.0" layoutY="146.0" mnemonicParsing="false" onAction="#handleAction" stylesheets="@../resources/stylesheet.css" text="Sök resa">
+      <Button fx:id="btnFindTrip" layoutX="62.0" layoutY="146.0" mnemonicParsing="false" onAction="#handleAction" stylesheets="@../resources/stylesheet.css" text="Sök resa">
          <font>
             <Font name="Lucida Grande" size="13.0" />
          </font>
@@ -31,5 +31,11 @@
             <Image url="@../resources/tool.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="236.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/plane.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="203.0" layoutY="146.0" mnemonicParsing="false" stylesheets="@../resources/stylesheet.css" text="Mina biljetter" />
    </children>
 </AnchorPane>

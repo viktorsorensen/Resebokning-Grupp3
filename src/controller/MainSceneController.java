@@ -16,20 +16,23 @@ import java.util.ResourceBundle;
 public class MainSceneController implements Initializable {
 
     @FXML
-    private Button btnNext;
+    private Button btnFindTrip;
 
     @FXML
     private void handleAction(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
 
-        stage = (Stage) btnNext.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("../view/BookingView.fxml"));
+        if (event.getSource() == btnFindTrip) {
+            Stage stage;
+            Parent root;
 
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+            stage = (Stage) btnFindTrip.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("../view/BookingView.fxml"));
 
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        }
     }
 
     @Override
