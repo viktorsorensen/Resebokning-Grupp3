@@ -39,7 +39,7 @@ public class BookingViewController implements Initializable {
 
         cbFrom.setItems(FXCollections.observableArrayList("Ängelholm", "Malmö", "Helsingborg"));
         cbTo.setItems(FXCollections.observableArrayList("Mexiko", "Danmark", "Finland"));
-        cbChoose.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Business", "Economy"));
+        cbChoose.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Första klass" , "Business", "Economy"));
         cbChoose.getSelectionModel().selectFirst();
 
     }
