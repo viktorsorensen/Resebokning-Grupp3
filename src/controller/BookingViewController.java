@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.control.Separator;
 
 /**
  * Created by viktorsorensen on 2016-04-03.
@@ -28,12 +29,17 @@ public class BookingViewController implements Initializable {
 
     @FXML
     private ChoiceBox cbTo;
+    
+    @FXML
+    private ChoiceBox cbChoose;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         cbFrom.setItems(FXCollections.observableArrayList("Ängelholm", "Malmö", "Helsingborg"));
         cbTo.setItems(FXCollections.observableArrayList("Mexiko", "Danmark", "Finland"));
+        cbChoose.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Business", "Economy"));
+        cbChoose.getSelectionModel().selectFirst();
 
     }
 

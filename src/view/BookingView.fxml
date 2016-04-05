@@ -60,5 +60,11 @@
       <Button layoutX="210.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
       <Button layoutX="175.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
       <Button layoutX="210.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="347.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/suit.png" />
+         </image>
+      </ImageView>
+      <ChoiceBox fx:id="cbChoose" layoutX="394.0" layoutY="218.0" prefHeight="25.0" prefWidth="133.0" />
    </children>
 </AnchorPane>
