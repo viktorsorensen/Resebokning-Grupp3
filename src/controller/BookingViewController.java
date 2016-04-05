@@ -19,6 +19,7 @@ import javafx.scene.control.Separator;
 /**
  * Created by viktorsorensen on 2016-04-03.
  */
+
 public class BookingViewController implements Initializable {
 
     @FXML
