@@ -29,17 +29,17 @@ public class BookingViewController implements Initializable {
     private ChoiceBox cbFrom;
 
     @FXML
-    private ChoiceBox cbTo;
+    private ChoiceBox cbTo; 
     
     @FXML
-    private ChoiceBox cbChoose;
+    private ChoiceBox cbChoose; 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         cbFrom.setItems(FXCollections.observableArrayList("Ängelholm", "Malmö", "Helsingborg"));
-        cbTo.setItems(FXCollections.observableArrayList("Mexiko", "Danmark", "Finland"));
-        cbChoose.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Första klass" , "Business", "Economy"));
+        cbTo.setItems(FXCollections.observableArrayList("Mexico", "Denmark", "Finland"));
+        cbChoose.setItems(FXCollections.observableArrayList("Choose class", new Separator(), "First Class" , "Business", "Economy"));
         cbChoose.getSelectionModel().selectFirst();
 
     }
