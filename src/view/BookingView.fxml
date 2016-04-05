@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -66,5 +67,12 @@
          </image>
       </ImageView>
       <ChoiceBox fx:id="cbChoose" layoutX="394.0" layoutY="218.0" prefHeight="25.0" prefWidth="133.0" />
+      <RadioButton layoutX="394.0" layoutY="262.0" mnemonicParsing="false" text="Tur/Retur" />
+      <RadioButton layoutX="477.0" layoutY="261.0" mnemonicParsing="false" text="Enkel" />
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="347.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/ticket.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
