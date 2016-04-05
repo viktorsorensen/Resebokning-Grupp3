@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -23,7 +24,7 @@
             <Font name="Lucida Grande Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="btnBack" layoutX="541.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleAction" text="Button" />
+      <Button fx:id="btnBack" layoutX="534.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleAction" text="Button" />
       <ChoiceBox fx:id="cbFrom" layoutX="62.0" layoutY="110.0" prefHeight="27.0" prefWidth="180.0" />
       <ChoiceBox fx:id="cbTo" layoutX="347.0" layoutY="110.0" prefHeight="27.0" prefWidth="180.0" />
       <Label layoutX="123.0" layoutY="83.0" text="Resa från" />
@@ -31,5 +32,33 @@
       <Button fx:id="btnChooseTrip" layoutX="259.0" layoutY="337.0" mnemonicParsing="false" stylesheets="@../resources/stylesheet.css" text="Välj resa" />
       <DatePicker layoutX="62.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
       <DatePicker layoutX="347.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
+      <Label layoutX="95.0" layoutY="147.0" text="Välj när du vill åka">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="359.0" layoutY="147.0" text="Välj när du vill åka tillbaka">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="95.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/shape.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="101.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/people.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="62.0" layoutY="217.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
+      <TextField layoutX="62.0" layoutY="257.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
+      <Label layoutX="131.0" layoutY="222.0" text="Vuxen" />
+      <Label layoutX="140.0" layoutY="261.0" text="Barn" />
+      <Button layoutX="175.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
+      <Button layoutX="210.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
+      <Button layoutX="175.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
+      <Button layoutX="210.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
    </children>
 </AnchorPane>
