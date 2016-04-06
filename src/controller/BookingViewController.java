@@ -98,7 +98,6 @@ public class BookingViewController implements Initializable {
                             setDisable(true);
                             setStyle("-fx-background-color: #ffc0cb");
                         }
-
                     }
                 };
 
@@ -112,7 +111,6 @@ public class BookingViewController implements Initializable {
                         if (day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY) {
                             setStyle("-fx-background-color: beige");
                         }
-
                     }
                 };
 
