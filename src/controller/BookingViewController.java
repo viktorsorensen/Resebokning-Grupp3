@@ -20,6 +20,7 @@ import java.util.ResourceBundle;
 /**
  * Created by viktorsorensen on 2016-04-03.
  */
+
 public class BookingViewController implements Initializable {
 
     @FXML
@@ -32,9 +33,10 @@ public class BookingViewController implements Initializable {
     private ChoiceBox cbFrom;
 
     @FXML
-    private ChoiceBox cbTo;
+    private ChoiceBox cbTo; 
     
     @FXML
+<<<<<<< HEAD
     private ChoiceBox cbChooseClass;
 
     @FXML
@@ -63,6 +65,9 @@ public class BookingViewController implements Initializable {
 
     @FXML
     private ChoiceBox cbChoose;
+=======
+    private ChoiceBox cbChoose; 
+>>>>>>> df7fefd4ffe0cc541170d47326d723e8845770d0
 
     @FXML
     private RadioButton rbtnDepartReturn;
@@ -81,7 +86,7 @@ public class BookingViewController implements Initializable {
 
         cbFrom.setItems(FXCollections.observableArrayList("Ängelholm", "Malmö", "Helsingborg"));
         cbTo.setItems(FXCollections.observableArrayList("Mexiko", "Danmark", "Finland"));
-        cbChoose.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Business", "Economy"));
+        cbChoose.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Första Klass" , "Business", "Ekonomi"));
         cbChoose.getSelectionModel().selectFirst();
 
     }

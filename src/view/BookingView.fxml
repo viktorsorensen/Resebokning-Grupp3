@@ -11,6 +11,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -37,8 +38,13 @@
       <Label layoutX="123.0" layoutY="83.0" text="Resa från" />
       <Label layoutX="413.0" layoutY="83.0" text="Resa till" />
       <Button fx:id="btnChooseTrip" layoutX="259.0" layoutY="337.0" mnemonicParsing="false" stylesheets="@../resources/stylesheet.css" text="Sök resa" />
+<<<<<<< HEAD
       <DatePicker fx:id="dateDepart" layoutX="62.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
       <DatePicker fx:id="dateReturn" layoutX="347.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
+=======
+      <DatePicker layoutX="62.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
+      <DatePicker layoutX="347.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
+>>>>>>> df7fefd4ffe0cc541170d47326d723e8845770d0
       <Label layoutX="95.0" layoutY="147.0" text="Välj när du vill åka">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -80,5 +86,6 @@
             <Image url="@../resources/ticket.png" />
          </image>
       </ImageView>
+      <Separator layoutX="64.0" layoutY="311.0" prefHeight="0.0" prefWidth="462.0" />
    </children>
 </AnchorPane>
