@@ -36,7 +36,6 @@ public class BookingViewController implements Initializable {
     private ChoiceBox cbTo; 
     
     @FXML
-<<<<<<< HEAD
     private ChoiceBox cbChooseClass;
 
     @FXML
@@ -64,12 +63,6 @@ public class BookingViewController implements Initializable {
     private Button btnChildPlus;
 
     @FXML
-    private ChoiceBox cbChoose;
-=======
-    private ChoiceBox cbChoose; 
->>>>>>> df7fefd4ffe0cc541170d47326d723e8845770d0
-
-    @FXML
     private RadioButton rbtnDepartReturn;
 
     @FXML
@@ -86,8 +79,8 @@ public class BookingViewController implements Initializable {
 
         cbFrom.setItems(FXCollections.observableArrayList("Ängelholm", "Malmö", "Helsingborg"));
         cbTo.setItems(FXCollections.observableArrayList("Mexiko", "Danmark", "Finland"));
-        cbChoose.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Första Klass" , "Business", "Ekonomi"));
-        cbChoose.getSelectionModel().selectFirst();
+        cbChooseClass.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Första Klass" , "Business", "Ekonomi"));
+        cbChooseClass.getSelectionModel().selectFirst();
 
     }
 
