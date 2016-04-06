@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.util.Callback;
@@ -85,6 +86,9 @@ public class BookingViewController implements Initializable {
                     @Override
                     public void updateItem(LocalDate item, boolean empty) {
                         super.updateItem(item, empty);
+
+                        long daysGone = ChronoUnit.DAYS.between(dateDepart.getValue(), item);
+                        setTooltip(new Tooltip("Du kommer att vara borta i " + daysGone + " dagar."));
                         
                         if (item.isBefore(
                                 dateDepart.getValue().plusDays(1))
