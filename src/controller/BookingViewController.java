@@ -7,14 +7,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.awt.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.scene.control.Separator;
 
 /**
  * Created by viktorsorensen on 2016-04-03.
@@ -25,13 +26,55 @@ public class BookingViewController implements Initializable {
     private Button btnBack;
 
     @FXML
+    private Button btnChooseTrip;
+
+    @FXML
     private ChoiceBox cbFrom;
 
     @FXML
     private ChoiceBox cbTo;
     
     @FXML
+    private ChoiceBox cbChooseClass;
+
+    @FXML
+    private DatePicker dateDepart;
+
+    @FXML
+    private DatePicker dateReturn;
+
+    @FXML
+    private TextField tfAdult;
+
+    @FXML
+    private TextField tfChild;
+
+    @FXML
+    private Button btnAdultMinus;
+
+    @FXML
+    private Button btnAdultPlus;
+
+    @FXML
+    private Button btnChildMinus;
+
+    @FXML
+    private Button btnChildPlus;
+
+    @FXML
     private ChoiceBox cbChoose;
+
+    @FXML
+    private RadioButton rbtnDepartReturn;
+
+    @FXML
+    private RadioButton rbtnOneWay;
+
+
+
+
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

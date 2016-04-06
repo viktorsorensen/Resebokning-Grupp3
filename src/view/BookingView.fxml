@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -12,7 +18,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BookingViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BookingViewController">
    <children>
       <Rectangle fill="#de1fff" height="62.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
       <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
@@ -25,14 +31,14 @@
             <Font name="Lucida Grande Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="btnBack" layoutX="534.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleAction" text="Button" />
+      <Button fx:id="btnBack" layoutX="17.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleAction" stylesheets="@../resources/stylesheet.css" text="&lt;" />
       <ChoiceBox fx:id="cbFrom" layoutX="62.0" layoutY="110.0" prefHeight="27.0" prefWidth="180.0" />
       <ChoiceBox fx:id="cbTo" layoutX="347.0" layoutY="110.0" prefHeight="27.0" prefWidth="180.0" />
       <Label layoutX="123.0" layoutY="83.0" text="Resa från" />
       <Label layoutX="413.0" layoutY="83.0" text="Resa till" />
-      <Button fx:id="btnChooseTrip" layoutX="259.0" layoutY="337.0" mnemonicParsing="false" stylesheets="@../resources/stylesheet.css" text="Välj resa" />
-      <DatePicker layoutX="62.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
-      <DatePicker layoutX="347.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
+      <Button fx:id="btnChooseTrip" layoutX="259.0" layoutY="337.0" mnemonicParsing="false" stylesheets="@../resources/stylesheet.css" text="Sök resa" />
+      <DatePicker fx:id="dateDepart" layoutX="62.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
+      <DatePicker fx:id="dateReturn" layoutX="347.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
       <Label layoutX="95.0" layoutY="147.0" text="Välj när du vill åka">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -53,22 +59,22 @@
             <Image url="@../resources/people.png" />
          </image>
       </ImageView>
-      <TextField layoutX="62.0" layoutY="217.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
-      <TextField layoutX="62.0" layoutY="257.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
+      <TextField fx:id="tfAdult" layoutX="62.0" layoutY="217.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
+      <TextField fx:id="tfChild" layoutX="62.0" layoutY="257.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
       <Label layoutX="131.0" layoutY="222.0" text="Vuxen" />
       <Label layoutX="140.0" layoutY="261.0" text="Barn" />
-      <Button layoutX="175.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
-      <Button layoutX="210.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
-      <Button layoutX="175.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
-      <Button layoutX="210.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
+      <Button fx:id="btnAdultMinus" layoutX="175.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
+      <Button fx:id="btnAdultPlus" layoutX="210.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
+      <Button fx:id="btnChildMinus" layoutX="175.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
+      <Button fx:id="btnChildPlus" layoutX="210.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
       <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="347.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/suit.png" />
          </image>
       </ImageView>
-      <ChoiceBox fx:id="cbChoose" layoutX="394.0" layoutY="218.0" prefHeight="25.0" prefWidth="133.0" />
-      <RadioButton layoutX="394.0" layoutY="262.0" mnemonicParsing="false" text="Tur/Retur" />
-      <RadioButton layoutX="477.0" layoutY="261.0" mnemonicParsing="false" text="Enkel" />
+      <ChoiceBox fx:id="cbChooseClass" layoutX="394.0" layoutY="218.0" prefHeight="25.0" prefWidth="133.0" />
+      <RadioButton fx:id="rbtnDepartReturn" layoutX="394.0" layoutY="262.0" mnemonicParsing="false" text="Tur/Retur" />
+      <RadioButton fx:id="rbtnOneWay" layoutX="477.0" layoutY="261.0" mnemonicParsing="false" text="Enkel" />
       <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="347.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/ticket.png" />
