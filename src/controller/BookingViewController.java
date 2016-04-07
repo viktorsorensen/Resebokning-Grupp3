@@ -142,7 +142,7 @@ public class BookingViewController implements Initializable {
     private void removeChild(ActionEvent ev) throws IOException {
         childCount--;
         tfChild.setText(String.valueOf(childCount));
-        if(childCount < 0){
+        if(childCount <= 0){
             tfChild.setText(String.valueOf(0));
             btnChildMinus.setDisable(true);
         }
