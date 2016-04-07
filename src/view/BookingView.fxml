@@ -74,11 +74,11 @@
          </image>
       </ImageView>
       <ChoiceBox fx:id="cbChooseClass" layoutX="394.0" layoutY="218.0" prefHeight="25.0" prefWidth="133.0" />
-      <RadioButton fx:id="rbtnDepartReturn" layoutX="394.0" layoutY="262.0" mnemonicParsing="false" text="Tur/Retur">
+      <RadioButton fx:id="rbtnDepartReturn" layoutX="394.0" layoutY="262.0" mnemonicParsing="false" text="T/R">
          <toggleGroup>
             <ToggleGroup fx:id="ticketsType" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="rbtnOneWay" layoutX="477.0" layoutY="261.0" mnemonicParsing="false" text="Enkel" toggleGroup="$ticketsType" />
+      <RadioButton fx:id="rbtnOneWay" layoutX="469.0" layoutY="261.0" mnemonicParsing="false" text="Enkel" toggleGroup="$ticketsType" />
       <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="347.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/ticket.png" />
