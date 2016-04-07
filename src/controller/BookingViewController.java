@@ -100,6 +100,10 @@ public class BookingViewController implements Initializable {
     }
 
     @FXML
+    private void handleAction(ActionEvent event) throws  IOException{
+
+    }
+    @FXML
     private void handleAction(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
