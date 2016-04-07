@@ -37,8 +37,8 @@ public class BookingViewController implements Initializable {
     private ChoiceBox cbFrom;
 
     @FXML
-    private ChoiceBox cbTo; 
-    
+    private ChoiceBox cbTo;
+
     @FXML
     private ChoiceBox cbChooseClass;
 
@@ -82,7 +82,7 @@ public class BookingViewController implements Initializable {
         cbTo.setItems(FXCollections.observableArrayList("Mexiko", "Danmark", "Finland"));
         cbChooseClass.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Första Klass" , "Business", "Ekonomi"));
         cbChooseClass.getSelectionModel().selectFirst();
-        
+
         // Datepicker
         dateDepart.setValue(LocalDate.now());
         final Callback<DatePicker, DateCell> dayCellFactory =
@@ -90,7 +90,7 @@ public class BookingViewController implements Initializable {
                     @Override
                     public void updateItem(LocalDate item, boolean empty) {
                         super.updateItem(item, empty);
-                        
+
                         if (item.isBefore(
                                 dateDepart.getValue().plusDays(1))
                                 ) {
@@ -99,7 +99,7 @@ public class BookingViewController implements Initializable {
                         }
                     }
                 };
-        
+
         dateReturn.setDayCellFactory(dayCellFactory);
         dateReturn.setValue(dateDepart.getValue().plusDays(1));
 
@@ -108,22 +108,23 @@ public class BookingViewController implements Initializable {
 
     @FXML
     private void addAdult(ActionEvent ev) throws IOException {
-
         adultCount++;
         tfAdult.setText(String.valueOf(adultCount));
         if (adultCount >= 9){
-            tfAdult.setText(String.valueOf(8));
+            btnAdultPlus.setDisable(true);
         }
-
-        }
+        btnAdultMinus.setDisable(false);
+    }
 
     @FXML
     private void removeAdult(ActionEvent ev) throws IOException {
         adultCount--;
         tfAdult.setText(String.valueOf(adultCount));
-        if(adultCount < 0){
+        if(adultCount <= 0){
             tfAdult.setText(String.valueOf(0));
+            btnAdultMinus.setDisable(true);
         }
+        btnAdultPlus.setDisable(false);
 
     }
     @FXML
@@ -134,6 +135,7 @@ public class BookingViewController implements Initializable {
             tfChild.setText(String.valueOf(8));
         }
     }
+
     @FXML
     private void removeChild(ActionEvent ev) throws IOException {
         childCount--;

@@ -21,11 +21,7 @@
             <Font name="Lucida Grande Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="btnFindTrip" layoutX="62.0" layoutY="146.0" mnemonicParsing="false" onAction="#handleAction" stylesheets="@../resources/stylesheet.css" text="Sök resa">
-         <font>
-            <Font name="Lucida Grande" size="13.0" />
-         </font>
-      </Button>
+      <Button fx:id="btnFindTrip" layoutX="62.0" layoutY="146.0" mnemonicParsing="false" onAction="#handleAction" stylesheets="@../resources/stylesheet.css" text="Sök resa" />
       <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="82.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/tool.png" />
