@@ -12,7 +12,9 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.util.Callback;
@@ -94,6 +96,9 @@ public class BookingViewController implements Initializable {
                     public void updateItem(LocalDate item, boolean empty) {
                         super.updateItem(item, empty);
 
+                        long daysGone = ChronoUnit.DAYS.between(dateDepart.getValue(), item);
+                        setTooltip(new Tooltip("Du kommer att vara borta i " + daysGone + " dagar."));
+
                         if (item.isBefore(
                                 dateDepart.getValue().plusDays(1))
                                 ) {
@@ -103,6 +108,20 @@ public class BookingViewController implements Initializable {
                     }
                 };
 
+        final Callback<DatePicker, DateCell> dayCellFactoryTwo =
+                (final DatePicker datePicker) -> new DateCell() {
+                    @Override
+                    public void updateItem(LocalDate item, boolean empty) {
+                        super.updateItem(item, empty);
+
+                        DayOfWeek day = DayOfWeek.from(item);
+                        if (day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY) {
+                            setStyle("-fx-background-color: beige");
+                        }
+                    }
+                };
+
+        dateDepart.setDayCellFactory(dayCellFactoryTwo);
         dateReturn.setDayCellFactory(dayCellFactory);
         dateReturn.setValue(dateDepart.getValue().plusDays(1));
 
