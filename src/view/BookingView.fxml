@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -14,7 +20,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BookingViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BookingViewController">
    <children>
       <Rectangle fill="#de1fff" height="62.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
       <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
@@ -64,10 +70,10 @@
       <TextField fx:id="tfChild" layoutX="62.0" layoutY="257.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
       <Label layoutX="131.0" layoutY="222.0" text="Vuxen" />
       <Label layoutX="140.0" layoutY="261.0" text="Barn" />
-      <Button fx:id="btnAdultMinus" layoutX="175.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
-      <Button fx:id="btnAdultPlus" layoutX="210.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
-      <Button fx:id="btnChildMinus" layoutX="175.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
-      <Button fx:id="btnChildPlus" layoutX="210.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
+      <Button fx:id="btnAdultMinus" layoutX="175.0" layoutY="217.0" mnemonicParsing="false" onAction="#removeAdult" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
+      <Button fx:id="btnAdultPlus" layoutX="210.0" layoutY="217.0" mnemonicParsing="false" onAction="#addAdult" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
+      <Button fx:id="btnChildMinus" layoutX="175.0" layoutY="257.0" mnemonicParsing="false" onAction="#removeChild" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
+      <Button fx:id="btnChildPlus" layoutX="210.0" layoutY="257.0" mnemonicParsing="false" onAction="#addChild" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="+" />
       <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="347.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/suit.png" />
