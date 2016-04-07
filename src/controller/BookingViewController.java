@@ -110,7 +110,7 @@ public class BookingViewController implements Initializable {
     private void addAdult(ActionEvent ev) throws IOException {
         adultCount++;
         tfAdult.setText(String.valueOf(adultCount));
-        if (adultCount >= 9){
+        if (adultCount >= 8){
             btnAdultPlus.setDisable(true);
         }
         btnAdultMinus.setDisable(false);
@@ -133,7 +133,9 @@ public class BookingViewController implements Initializable {
         tfChild.setText(String.valueOf(childCount));
         if(childCount >= 8){
             tfChild.setText(String.valueOf(8));
+            btnChildPlus.setDisable(true);
         }
+        btnChildMinus.setDisable(false);
     }
 
     @FXML
@@ -142,7 +144,9 @@ public class BookingViewController implements Initializable {
         tfChild.setText(String.valueOf(childCount));
         if(childCount < 0){
             tfChild.setText(String.valueOf(0));
+            btnChildMinus.setDisable(true);
         }
+        btnChildPlus.setDisable(false);
     }
 
 
