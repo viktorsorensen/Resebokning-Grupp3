@@ -77,6 +77,9 @@ public class BookingViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        btnChildMinus.setDisable(true);
+        btnAdultMinus.setDisable(true);
+
         // Lägg in dummy data
         cbFrom.setItems(FXCollections.observableArrayList("Ängelholm", "Malmö", "Helsingborg"));
         cbTo.setItems(FXCollections.observableArrayList("Mexiko", "Danmark", "Finland"));
