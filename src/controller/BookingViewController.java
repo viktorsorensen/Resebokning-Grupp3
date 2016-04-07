@@ -186,4 +186,17 @@ public class BookingViewController implements Initializable {
         stage.show();
 
     }
+
+    @FXML
+    private void searchTripAction(ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
+
+        stage = (Stage) btnBack.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("../view/FlightinfoView.fxml"));
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
