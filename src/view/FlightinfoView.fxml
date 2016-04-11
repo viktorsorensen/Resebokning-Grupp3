@@ -23,14 +23,14 @@
             <Font name="Lucida Grande Bold" size="21.0" />
          </font>
       </Label>
-      <TableView layoutY="62.0" prefHeight="267.0" prefWidth="600.0">
+      <TableView fx:id="flightTable" layoutY="62.0" prefHeight="267.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="63.0" text="Flygref" />
-            <TableColumn prefWidth="118.0" text="Från" />
-            <TableColumn prefWidth="125.0" text="Till" />
-            <TableColumn prefWidth="83.0" text="Tid" />
-            <TableColumn prefWidth="114.0" text="Platser" />
-            <TableColumn prefWidth="96.0" text="Pris" />
+          <TableColumn fx:id="flightRefCol" prefWidth="63.0" text="Flygref" />
+            <TableColumn fx:id="flightFromCol" prefWidth="118.0" text="Från" />
+            <TableColumn fx:id="flightToCol" prefWidth="125.0" text="Till" />
+            <TableColumn fx:id="flightTimeCol" prefWidth="83.0" text="Tid" />
+            <TableColumn fx:id="flightSeatsCol" prefWidth="114.0" text="Platser" />
+            <TableColumn fx:id="flightPriceCol" prefWidth="96.0" text="Pris" />
         </columns>
       </TableView>
       <Button fx:id="backBtn" layoutX="17.0" layoutY="351.0" mnemonicParsing="false" onAction="#backAction" stylesheets="@../resources/stylesheet.css" text="&lt;" />
@@ -40,5 +40,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
+      <Button fx:id="homeBtn" layoutX="544.0" layoutY="19.0" mnemonicParsing="false" onAction="#homeAction" stylesheets="@../resources/stylesheet.css" text="Hem" />
    </children>
 </AnchorPane>
