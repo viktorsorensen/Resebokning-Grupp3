@@ -32,6 +32,9 @@ public class FlightinfoController implements Initializable{
     private Button homeBtn;
 
     @FXML
+    private Button pickBtn;
+
+    @FXML
     private TableView<Flight> flightTable;
 
     @FXML
@@ -84,6 +87,19 @@ public class FlightinfoController implements Initializable{
 
         stage = (Stage) backBtn.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("../view/MainScene.fxml"));
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void nextSceneAction(ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
+
+        stage = (Stage) pickBtn.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("../view/PersonInfoView.fxml"));
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

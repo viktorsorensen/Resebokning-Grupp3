@@ -34,7 +34,7 @@
         </columns>
       </TableView>
       <Button fx:id="backBtn" layoutX="17.0" layoutY="351.0" mnemonicParsing="false" onAction="#backAction" stylesheets="@../resources/stylesheet.css" text="&lt;" />
-      <Button layoutX="550.0" layoutY="351.0" mnemonicParsing="false" stylesheets="@../resources/stylesheet.css" text="Välj" />
+      <Button fx:id="pickBtn" layoutX="550.0" layoutY="351.0" mnemonicParsing="false" onAction="#nextSceneAction" stylesheets="@../resources/stylesheet.css" text="Välj" />
       <Label layoutX="273.0" layoutY="355.0" text="Välj flyg">
          <font>
             <Font name="System Bold" size="13.0" />

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,16 +20,5 @@
             <Font name="Lucida Grande Bold" size="21.0" />
          </font>
       </Label>
-      <TableView layoutX="-2.0" layoutY="130.0" prefHeight="200.0" prefWidth="600.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="Flight ID" />
-            <TableColumn prefWidth="75.0" text="Location" />
-            <TableColumn prefWidth="97.0" text="Destination" />
-            <TableColumn prefWidth="53.0" text="Time" />
-            <TableColumn prefWidth="75.0" text="Seats" />
-            <TableColumn prefWidth="75.0" text="Price" />
-            <TableColumn prefWidth="149.0" text="Last booking time" />
-        </columns>
-      </TableView>
    </children>
 </AnchorPane>
