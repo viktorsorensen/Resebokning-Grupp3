@@ -25,17 +25,16 @@
       </Label>
       <TableView layoutY="62.0" prefHeight="267.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Flight ID" />
-            <TableColumn prefWidth="75.0" text="Location" />
-            <TableColumn prefWidth="97.0" text="Destination" />
-            <TableColumn prefWidth="53.0" text="Time" />
-            <TableColumn prefWidth="75.0" text="Seats" />
-            <TableColumn prefWidth="75.0" text="Price" />
-            <TableColumn prefWidth="149.0" text="Last booking time" />
+          <TableColumn prefWidth="63.0" text="Flygref" />
+            <TableColumn prefWidth="118.0" text="Från" />
+            <TableColumn prefWidth="125.0" text="Till" />
+            <TableColumn prefWidth="83.0" text="Tid" />
+            <TableColumn prefWidth="114.0" text="Platser" />
+            <TableColumn prefWidth="96.0" text="Pris" />
         </columns>
       </TableView>
       <Button fx:id="backBtn" layoutX="17.0" layoutY="351.0" mnemonicParsing="false" onAction="#backAction" stylesheets="@../resources/stylesheet.css" text="&lt;" />
-      <Button layoutX="539.0" layoutY="351.0" mnemonicParsing="false" stylesheets="@../resources/stylesheet.css" text="Next" />
+      <Button layoutX="550.0" layoutY="351.0" mnemonicParsing="false" stylesheets="@../resources/stylesheet.css" text="Välj" />
       <Label layoutX="273.0" layoutY="355.0" text="Välj flyg">
          <font>
             <Font name="System Bold" size="13.0" />
