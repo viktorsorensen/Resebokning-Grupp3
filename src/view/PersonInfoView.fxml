@@ -17,7 +17,7 @@
             <Image url="@../resources/transport.png" />
          </image>
       </ImageView>
-      <Label layoutX="62.0" layoutY="18.0" text="Resebolag" textFill="WHITE">
+      <Label layoutX="62.0" layoutY="18.0" text="vihana Resebolag" textFill="WHITE">
          <font>
             <Font name="Lucida Grande Bold" size="21.0" />
          </font>
