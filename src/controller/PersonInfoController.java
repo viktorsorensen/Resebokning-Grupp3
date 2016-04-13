@@ -55,4 +55,17 @@ public class PersonInfoController implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    private void bookAction(ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
+
+        stage = (Stage) bookBtn.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("../view/FinishedView.fxml"));
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
 }
