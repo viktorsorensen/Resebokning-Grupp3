@@ -17,6 +17,8 @@ public class MainSceneController implements Initializable {
 
     @FXML
     private Button btnFindTrip;
+    @FXML
+    private Button myTicketBtn;
 
     @FXML
     private void handleAction(ActionEvent event) throws IOException {
@@ -33,7 +35,22 @@ public class MainSceneController implements Initializable {
             stage.show();
 
         }
+
+
     }
+    @FXML
+    private void ticketAction(ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
+
+        stage = (Stage) myTicketBtn.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("../view/TicketScene.fxml"));
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
