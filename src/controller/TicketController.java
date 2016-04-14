@@ -55,7 +55,7 @@ public class TicketController implements Initializable {
         Parent root;
 
         stage = (Stage) backBtn.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("../view/BookingView.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../view/MainScene.fxml"));
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -39,4 +39,3 @@ public class FinishedViewController implements Initializable {
 
     }
 }
-

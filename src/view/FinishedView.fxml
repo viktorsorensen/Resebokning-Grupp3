@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FinishedViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FinishedViewController">
    <children>
       <Rectangle fill="#ffa703" height="62.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
       <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
@@ -31,6 +26,7 @@
             <Font size="31.0" />
          </font>
       </Label>
-      <Button fx:id="homeBtn" layoutX="528.0" layoutY="18.0" mnemonicParsing="false" onAction="#homeAction" stylesheets="@../resources/stylesheet.css" text="Hem" />
+      <Button fx:id="homeBtn" layoutX="544.0" layoutY="19.0" mnemonicParsing="false" onAction="#homeAction" stylesheets="@../resources/stylesheet.css" text="Hem" />
+      <Label layoutX="184.0" layoutY="225.0" text="Du kan hitta biljetten under &quot;Mina Biljetter&quot;." />
    </children>
 </AnchorPane>
