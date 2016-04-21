@@ -24,14 +24,7 @@
          </font>
       </Label>
       <TableView fx:id="flightTable" layoutY="62.0" prefHeight="267.0" prefWidth="600.0">
-        <columns>
-          <TableColumn fx:id="flightRefCol" prefWidth="63.0" text="Flygref" />
-            <TableColumn fx:id="flightFromCol" prefWidth="118.0" text="Från" />
-            <TableColumn fx:id="flightToCol" prefWidth="125.0" text="Till" />
-            <TableColumn fx:id="flightTimeCol" prefWidth="83.0" text="Tid" />
-            <TableColumn fx:id="flightSeatsCol" prefWidth="114.0" text="Platser" />
-            <TableColumn fx:id="flightPriceCol" prefWidth="96.0" text="Pris" />
-        </columns>
+
       </TableView>
       <Button fx:id="backBtn" layoutX="17.0" layoutY="351.0" mnemonicParsing="false" onAction="#backAction" stylesheets="@../resources/stylesheet.css" text="&lt;" />
       <Button fx:id="pickBtn" layoutX="550.0" layoutY="351.0" mnemonicParsing="false" onAction="#nextSceneAction" stylesheets="@../resources/stylesheet.css" text="Välj" />

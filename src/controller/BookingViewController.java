@@ -1,7 +1,5 @@
 package controller;
 
-import controller.table.Flight;
-import controller.table.Ticket;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,11 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import main.Main;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
@@ -94,7 +88,6 @@ public class BookingViewController implements Initializable {
 
     @FXML
     private Label typeLabel;
-
 
     private void disableStuff() {
         btnChildMinus.setDisable(true);

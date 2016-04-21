@@ -17,7 +17,6 @@ public class Main extends Application {
 
 
         try {
-
             Parent root = FXMLLoader.load(getClass().getResource("../view/MainScene.fxml"));
             primaryStage.setTitle("Resebolag");
             primaryStage.setScene(new Scene(root, 600, 400));

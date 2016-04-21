@@ -35,5 +35,4 @@ public class DBConnect {
         connect();
         return conn;
     }
-
 }

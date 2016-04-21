@@ -43,7 +43,7 @@ public class FlightinfoController implements Initializable{
     @FXML
     private TableView flightTable;
 
-    @FXML
+   /* @FXML
     private TableColumn flightRefCol;
     @FXML
     private TableColumn flightFromCol;
@@ -54,9 +54,10 @@ public class FlightinfoController implements Initializable{
     @FXML
     private TableColumn flightSeatsCol;
     @FXML
-    private TableColumn flightPriceCol;
+    private TableColumn flightPriceCol;*/
 
     private ObservableList<ObservableList> data;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
