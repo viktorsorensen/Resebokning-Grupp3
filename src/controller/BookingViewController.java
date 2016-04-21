@@ -1,7 +1,7 @@
 package controller;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import controller.table.Flight;
+import controller.table.Ticket;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,21 +10,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import main.Main;
+
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.Locale;
 import java.util.ResourceBundle;
-import javafx.util.Callback;
-import javafx.scene.control.DateCell;
-import javafx.scene.control.DatePicker;
-
-import javax.swing.*;
 
 /**
  * Created by viktorsorensen on 2016-04-03.
@@ -97,6 +95,7 @@ public class BookingViewController implements Initializable {
     @FXML
     private Label typeLabel;
 
+
     private void disableStuff() {
         btnChildMinus.setDisable(true);
         btnAdultMinus.setDisable(true);
@@ -116,7 +115,7 @@ public class BookingViewController implements Initializable {
         // Lägg in dummy data
         cbFrom.setItems(FXCollections.observableArrayList("Ängelholm", "Malmö", "Helsingborg"));
         cbTo.setItems(FXCollections.observableArrayList("Mexiko", "Danmark", "Finland"));
-        cbChooseClass.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Första Klass" , "Business", "Ekonomi"));
+        cbChooseClass.setItems(FXCollections.observableArrayList("Välj klass", new Separator(), "Första Klass", "Business", "Ekonomi"));
         cbChooseClass.getSelectionModel().selectFirst();
 
         // Datepicker
@@ -203,15 +202,20 @@ public class BookingViewController implements Initializable {
 
     @FXML
     private void handleAction(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
 
-        stage = (Stage) btnBack.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("../view/MainScene.fxml"));
+        try {
+            Stage stage;
+            Parent root;
 
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+            stage = (Stage) btnBack.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("../view/MainScene.fxml"));
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -220,15 +224,21 @@ public class BookingViewController implements Initializable {
 
         checkSelected();
 
-        Stage stage;
-        Parent root;
+        try {
 
-        stage = (Stage) btnBack.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("../view/FlightinfoView.fxml"));
+            Stage stage;
+            Parent root;
 
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+            stage = (Stage) btnBack.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("../view/FlightinfoView.fxml"));
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void checkSelected() {
