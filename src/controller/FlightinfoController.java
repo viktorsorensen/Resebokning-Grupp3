@@ -57,6 +57,7 @@ public class FlightinfoController implements Initializable{
     private TableColumn flightPriceCol;*/
 
     private ObservableList<ObservableList> data;
+    private BookingSession bookingSession;
 
 
     @Override
@@ -146,6 +147,8 @@ public class FlightinfoController implements Initializable{
         Stage stage;
         Parent root;
 
+        bookingSession.setSelectedFlight();
+
         stage = (Stage) pickBtn.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("../view/PersonInfoView.fxml"));
 
@@ -156,6 +159,10 @@ public class FlightinfoController implements Initializable{
 
     public void fillTable() {
         Connection c;
+    }
+
+    public void setBookingSession(BookingSession bookingSession) {
+        this.bookingSession = bookingSession;
     }
 }
 

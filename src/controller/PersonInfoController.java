@@ -25,8 +25,12 @@ public class PersonInfoController implements Initializable{
     @FXML
     private Button bookBtn;
 
+    BookingViewController bv;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
 
     }
 

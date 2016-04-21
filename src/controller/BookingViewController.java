@@ -89,6 +89,8 @@ public class BookingViewController implements Initializable {
     @FXML
     private Label typeLabel;
 
+    BookingSession bookingSession;
+
     private void disableStuff() {
         btnChildMinus.setDisable(true);
         btnAdultMinus.setDisable(true);
@@ -215,30 +217,43 @@ public class BookingViewController implements Initializable {
     @FXML
     private void searchTripAction(ActionEvent event) throws IOException {
 
-        checkSelected();
+        if (checkSelected()) {
 
-        try {
+            try {
 
-            Stage stage;
-            Parent root;
+                Stage stage;
+                Parent root;
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/FlightinfoView.fxml"));
+                Scene scene = new Scene(loader.load());
 
-            stage = (Stage) btnBack.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("../view/FlightinfoView.fxml"));
+                BookingSession bs = new BookingSession();
+                bs.setNumberOfAdults(adultCount);
 
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+
+                FlightinfoController controller = loader.<FlightinfoController>getController();
+                controller.setBookingSession(bs);
+
+                stage = (Stage) btnBack.getScene().getWindow();
+                //root = FXMLLoader.load(getClass().getResource("../view/FlightinfoView.fxml"));
+
+
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }
 
-    private void checkSelected() {
+    private boolean checkSelected() {
 
-        if (!cbChooseClass.getSelectionModel().isSelected(2) || !cbChooseClass.getSelectionModel().isSelected(3) || !cbChooseClass.getSelectionModel().isSelected(4)) {
-            pickClassLabel.setVisible(true);
-        }
+        boolean validated = true;
+
+        //if (!cbChooseClass.getSelectionModel().isSelected(2) && !cbChooseClass.getSelectionModel().isSelected(3) && !cbChooseClass.getSelectionModel().isSelected(4)) {
+        //    pickClassLabel.setVisible(true);
+        //    validated = false;
+        //}
 
         if (cbChooseClass.getSelectionModel().isSelected(2) || cbChooseClass.getSelectionModel().isSelected(3) || cbChooseClass.getSelectionModel().isSelected(4)) {
             pickClassLabel.setVisible(false);
@@ -254,25 +269,28 @@ public class BookingViewController implements Initializable {
 
         if (cbFrom.getSelectionModel().isEmpty()) {
             cbFromLabel.setVisible(true);
+            validated = false;
         }
 
         if (cbTo.getSelectionModel().isEmpty()) {
             cbToLabel.setVisible(true);
+            validated = false;
         }
 
         if (cbFrom.getSelectionModel().isEmpty() && cbTo.getSelectionModel().isEmpty()) {
             cbFromLabel.setVisible(true);
             cbToLabel.setVisible(true);
+            validated = false;
         }
 
-        if (tfAdult.getText().isEmpty()) {
+        if (adultCount == 0) {
             System.out.println("Adult Label");
             tfAdultLabel.setVisible(true);
+            validated = false;
+        } else {
+            tfAdultLabel.setVisible(false);
         }
 
-        if (tfChild.getText().isEmpty()) {
-            System.out.println("Fuck NAMIR!");
-            tfChildLabel.setVisible(true);
-        }
+        return validated;
     }
 }
