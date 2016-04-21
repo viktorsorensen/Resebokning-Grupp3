@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -76,11 +79,39 @@ public class BookingViewController implements Initializable {
     @FXML
     private RadioButton rbtnOneWay;
 
+    @FXML
+    private Label tfAdultLabel;
+
+    @FXML
+    private Label tfChildLabel;
+
+    @FXML
+    private Label cbFromLabel;
+
+    @FXML
+    private Label cbToLabel;
+
+    @FXML
+    private Label pickClassLabel;
+
+    @FXML
+    private Label typeLabel;
+
+    private void disableStuff() {
+        btnChildMinus.setDisable(true);
+        btnAdultMinus.setDisable(true);
+        tfAdultLabel.setVisible(false);
+        tfChildLabel.setVisible(false);
+        cbFromLabel.setVisible(false);
+        cbToLabel.setVisible(false);
+        pickClassLabel.setVisible(false);
+        typeLabel.setVisible(false);
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        btnChildMinus.setDisable(true);
-        btnAdultMinus.setDisable(true);
+
+        disableStuff();
 
         // Lägg in dummy data
         cbFrom.setItems(FXCollections.observableArrayList("Ängelholm", "Malmö", "Helsingborg"));
@@ -125,7 +156,6 @@ public class BookingViewController implements Initializable {
         dateReturn.setDayCellFactory(dayCellFactory);
         dateReturn.setValue(dateDepart.getValue().plusDays(1));
 
-
     }
 
     @FXML
@@ -164,14 +194,12 @@ public class BookingViewController implements Initializable {
     private void removeChild(ActionEvent ev) throws IOException {
         childCount--;
         tfChild.setText(String.valueOf(childCount));
-        if(childCount <= 0){
+        if (childCount <= 0){
             tfChild.setText(String.valueOf(0));
             btnChildMinus.setDisable(true);
         }
         btnChildPlus.setDisable(false);
     }
-
-
 
     @FXML
     private void handleAction(ActionEvent event) throws IOException {
@@ -189,6 +217,9 @@ public class BookingViewController implements Initializable {
 
     @FXML
     private void searchTripAction(ActionEvent event) throws IOException {
+
+        checkSelected();
+
         Stage stage;
         Parent root;
 
@@ -198,5 +229,47 @@ public class BookingViewController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void checkSelected() {
+
+        if (!cbChooseClass.getSelectionModel().isSelected(2) || !cbChooseClass.getSelectionModel().isSelected(3) || !cbChooseClass.getSelectionModel().isSelected(4)) {
+            pickClassLabel.setVisible(true);
+        }
+
+        if (cbChooseClass.getSelectionModel().isSelected(2) || cbChooseClass.getSelectionModel().isSelected(3) || cbChooseClass.getSelectionModel().isSelected(4)) {
+            pickClassLabel.setVisible(false);
+        }
+
+        if (!cbFrom.getSelectionModel().isEmpty()) {
+            cbFromLabel.setVisible(false);
+        }
+
+        if (!cbTo.getSelectionModel().isEmpty()) {
+            cbToLabel.setVisible(false);
+        }
+
+        if (cbFrom.getSelectionModel().isEmpty()) {
+            cbFromLabel.setVisible(true);
+        }
+
+        if (cbTo.getSelectionModel().isEmpty()) {
+            cbToLabel.setVisible(true);
+        }
+
+        if (cbFrom.getSelectionModel().isEmpty() && cbTo.getSelectionModel().isEmpty()) {
+            cbFromLabel.setVisible(true);
+            cbToLabel.setVisible(true);
+        }
+
+        if (tfAdult.getText().isEmpty()) {
+            System.out.println("Adult Label");
+            tfAdultLabel.setVisible(true);
+        }
+
+        if (tfChild.getText().isEmpty()) {
+            System.out.println("Fuck NAMIR!");
+            tfChildLabel.setVisible(true);
+        }
     }
 }

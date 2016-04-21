@@ -55,7 +55,7 @@ public class FlightinfoController implements Initializable{
 
         final ObservableList<Flight> data = FXCollections.observableArrayList(
                 new Flight(2433, "Helsingborg", "Mexiko", "14:30", 177, 1999),
-                new Flight(5442, "Stockholm", "Persien", "17:20", 133, 2433)
+                new Flight(5442, "Namirs hus", "Persien", "17:20", 133, 2433)
         );
 
         flightRefCol.setCellValueFactory(new PropertyValueFactory<Flight, Integer>("flightRef"));

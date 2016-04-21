@@ -37,8 +37,8 @@
       <DatePicker fx:id="dateDepart" layoutX="62.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
       <DatePicker fx:id="dateReturn" layoutX="347.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
 
-      <DatePicker fx:id="dateDepart" layoutX="62.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
-      <DatePicker fx:id="dateReturn" layoutX="347.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
+      <DatePicker fx:id="dateDepart" editable="false" layoutX="62.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
+      <DatePicker fx:id="dateReturn" editable="false" layoutX="347.0" layoutY="175.0" prefHeight="25.0" prefWidth="180.0" />
 
       <Label layoutX="95.0" layoutY="147.0" text="Välj när du vill åka">
          <font>
@@ -60,8 +60,8 @@
             <Image url="@../resources/people.png" />
          </image>
       </ImageView>
-      <TextField fx:id="tfAdult" layoutX="62.0" layoutY="217.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
-      <TextField fx:id="tfChild" layoutX="62.0" layoutY="257.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
+      <TextField fx:id="tfAdult" editable="false" layoutX="62.0" layoutY="217.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
+      <TextField fx:id="tfChild" editable="false" layoutX="62.0" layoutY="257.0" prefHeight="25.0" prefWidth="32.0" promptText="0" />
       <Label layoutX="131.0" layoutY="222.0" text="Vuxen" />
       <Label layoutX="140.0" layoutY="261.0" text="Barn" />
       <Button fx:id="btnAdultMinus" layoutX="175.0" layoutY="217.0" mnemonicParsing="false" onAction="#removeAdult" prefHeight="25.0" prefWidth="32.0" stylesheets="@../resources/stylesheet.css" text="-" />
@@ -85,5 +85,11 @@
          </image>
       </ImageView>
       <Separator layoutX="64.0" layoutY="311.0" prefHeight="0.0" prefWidth="462.0" />
+      <Label fx:id="tfAdultLabel" layoutX="43.0" layoutY="221.0" text="*" textFill="RED" />
+      <Label fx:id="tfChildLabel" layoutX="43.0" layoutY="263.0" text="*" textFill="RED" />
+      <Label fx:id="cbFromLabel" layoutX="43.0" layoutY="115.0" text="*" textFill="RED" />
+      <Label fx:id="cbToLabel" layoutX="327.0" layoutY="115.0" text="*" textFill="RED" />
+      <Label fx:id="pickClassLabel" layoutX="327.0" layoutY="221.0" text="*" textFill="RED" />
+      <Label fx:id="typeLabel" layoutX="327.0" layoutY="262.0" text="*" textFill="RED" />
    </children>
 </AnchorPane>
