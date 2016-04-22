@@ -2,6 +2,8 @@ package controller;
 
 import controller.table.Flight;
 import controller.table.Ticket;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,10 +17,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import main.DBConnect;
 
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 /**
@@ -34,19 +40,10 @@ public class TicketController implements Initializable {
     @FXML
     private Button homeBtn;
     @FXML
-    private TableView<Ticket> ticketTable;
-    @FXML
-    private TableColumn bookingNumCol;
-    @FXML
-    private TableColumn typeCol;
-    @FXML
-    private TableColumn firstNameCol;
-    @FXML
-    private TableColumn lastNameCol;
-    @FXML
-    private TableColumn socNumCol;
-    @FXML
-    private TableColumn priceCol;
+    private TableView ticketTable;
+
+    private ObservableList<ObservableList> data;
+
 
 
     @FXML
@@ -92,19 +89,42 @@ public class TicketController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
 
-        final ObservableList<Ticket> data = FXCollections.observableArrayList(
-                new Ticket(2433, "first", "Hampussy", "Brohlin", 19910421, 2499),
-                new Ticket(5442, "econ", "Namir", "Wesaf", 19941017, 1515)
-        );
+        Connection c;
+        data = FXCollections.observableArrayList();
+        try {
+            c = DBConnect.connect();
+            String SQL = "SELECT * from Customer";
+            ResultSet rs = c.createStatement().executeQuery(SQL);
 
-        bookingNumCol.setCellValueFactory(new PropertyValueFactory<Ticket, Integer>("bookingNum"));
-        typeCol.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketType"));
-        firstNameCol.setCellValueFactory(new PropertyValueFactory<Ticket, String>("firstName"));
-        lastNameCol.setCellValueFactory(new PropertyValueFactory<Ticket, String>("lastName"));
-        socNumCol.setCellValueFactory(new PropertyValueFactory<Ticket, Integer>("socNum"));
-        priceCol.setCellValueFactory(new PropertyValueFactory<Ticket, Double>("price"));
-        ticketTable.setItems(data);
+            for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
+                final int j = i;
+                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i + 1));
+                col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>() {
+                    public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
+                        return new SimpleStringProperty(param.getValue().get(j).toString());
+                    }
 
+                });
+
+                ticketTable.getColumns().addAll(col);
+                System.out.println("Column [" + i + "] ");
+            }
+
+            while (rs.next()) {
+                ObservableList<String> row = FXCollections.observableArrayList();
+                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+                    row.add(rs.getString(i));
+                }
+
+                System.out.println("Row [1] added" + row);
+                data.add(row);
+            }
+
+            ticketTable.setItems(data);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }

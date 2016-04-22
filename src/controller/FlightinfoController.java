@@ -146,13 +146,19 @@ public class FlightinfoController implements Initializable{
     private void nextSceneAction(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/PersoninfoView.fxml"));
+        Scene scene = new Scene(loader.load());
 
-        bookingSession.setSelectedFlight();
+        BookingSession bs = new BookingSession();
+
+
+        PersonInfoController controller = loader.<PersonInfoController>getController();
+        controller.setBookingSession(bs);
 
         stage = (Stage) pickBtn.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("../view/PersonInfoView.fxml"));
+        //root = FXMLLoader.load(getClass().getResource("../view/FlightinfoView.fxml"));
 
-        Scene scene = new Scene(root);
+
         stage.setScene(scene);
         stage.show();
     }

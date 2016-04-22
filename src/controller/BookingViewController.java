@@ -160,6 +160,7 @@ public class BookingViewController implements Initializable {
             btnAdultPlus.setDisable(true);
         }
         btnAdultMinus.setDisable(false);
+
     }
 
     @FXML
@@ -228,6 +229,7 @@ public class BookingViewController implements Initializable {
 
                 BookingSession bs = new BookingSession();
                 bs.setNumberOfAdults(adultCount);
+                bs.setNumberOfChildren(childCount);
 
 
                 FlightinfoController controller = loader.<FlightinfoController>getController();
@@ -250,10 +252,10 @@ public class BookingViewController implements Initializable {
 
         boolean validated = true;
 
-        //if (!cbChooseClass.getSelectionModel().isSelected(2) && !cbChooseClass.getSelectionModel().isSelected(3) && !cbChooseClass.getSelectionModel().isSelected(4)) {
-        //    pickClassLabel.setVisible(true);
-        //    validated = false;
-        //}
+        if (!cbChooseClass.getSelectionModel().isSelected(2) && !cbChooseClass.getSelectionModel().isSelected(3) && !cbChooseClass.getSelectionModel().isSelected(4)) {
+            pickClassLabel.setVisible(true);
+            validated = false;
+        }
 
         if (cbChooseClass.getSelectionModel().isSelected(2) || cbChooseClass.getSelectionModel().isSelected(3) || cbChooseClass.getSelectionModel().isSelected(4)) {
             pickClassLabel.setVisible(false);
@@ -284,13 +286,17 @@ public class BookingViewController implements Initializable {
         }
 
         if (adultCount == 0) {
-            System.out.println("Adult Label");
             tfAdultLabel.setVisible(true);
             validated = false;
         } else {
             tfAdultLabel.setVisible(false);
         }
-
+        if (!rbtnOneWay.isSelected() && (!rbtnDepartReturn.isSelected())) {
+            typeLabel.setVisible(true);
+            validated = false;
+        } else {
+            typeLabel.setVisible(false);
+        }
         return validated;
     }
 }
