@@ -13,9 +13,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by HampusBolin on 2016-04-13.
- */
 public class FinishedViewController implements Initializable {
     @FXML
     private Button homeBtn;
@@ -35,7 +32,6 @@ public class FinishedViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
 
     }
 }

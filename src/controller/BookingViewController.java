@@ -18,10 +18,6 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ResourceBundle;
 
-/**
- * Created by viktorsorensen on 2016-04-03.
- */
-
 public class BookingViewController implements Initializable {
 
     @FXML
@@ -171,6 +167,7 @@ public class BookingViewController implements Initializable {
             tfAdult.setText(String.valueOf(0));
             btnAdultMinus.setDisable(true);
         }
+        
         btnAdultPlus.setDisable(false);
 
     }
@@ -182,6 +179,7 @@ public class BookingViewController implements Initializable {
             tfChild.setText(String.valueOf(8));
             btnChildPlus.setDisable(true);
         }
+        
         btnChildMinus.setDisable(false);
     }
 
@@ -193,6 +191,7 @@ public class BookingViewController implements Initializable {
             tfChild.setText(String.valueOf(0));
             btnChildMinus.setDisable(true);
         }
+        
         btnChildPlus.setDisable(false);
     }
 
@@ -231,13 +230,10 @@ public class BookingViewController implements Initializable {
                 bs.setNumberOfAdults(adultCount);
                 bs.setNumberOfChildren(childCount);
 
-
                 FlightinfoController controller = loader.<FlightinfoController>getController();
                 controller.setBookingSession(bs);
 
                 stage = (Stage) btnBack.getScene().getWindow();
-                //root = FXMLLoader.load(getClass().getResource("../view/FlightinfoView.fxml"));
-
 
                 stage.setScene(scene);
                 stage.show();
@@ -291,6 +287,7 @@ public class BookingViewController implements Initializable {
         } else {
             tfAdultLabel.setVisible(false);
         }
+        
         if (!rbtnOneWay.isSelected() && (!rbtnDepartReturn.isSelected())) {
             typeLabel.setVisible(true);
             validated = false;

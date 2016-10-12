@@ -12,7 +12,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../view/MainScene.fxml"));
             primaryStage.setTitle("Resebolag");

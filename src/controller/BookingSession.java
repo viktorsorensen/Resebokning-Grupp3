@@ -1,8 +1,5 @@
 package controller;
 
-/**
- * Created by viktorsorensen on 2016-04-21.
- */
 public class BookingSession {
 
     private int numberOfAdults;

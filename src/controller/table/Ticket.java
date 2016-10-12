@@ -4,9 +4,6 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-/**
- * Created by HampusBolin on 2016-04-13.
- */
 public class Ticket {
 
     private SimpleIntegerProperty bookingNum;

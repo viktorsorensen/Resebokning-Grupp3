@@ -4,15 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * Created by Viktor on 2016-04-21.
- */
 public class DBConnect {
 
     private static Connection conn;
     private static String url = "jdbc:mysql://localhost/Resebolag1";
-    private static String user = "root";
-    private static String pass = "root";
+    private static String user = "root"; // Använder default user
+    private static String pass = "root"; // Använder default pw
 
     public static Connection connect() throws SQLException {
         try {

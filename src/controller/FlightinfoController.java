@@ -25,10 +25,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-/**
- * Created by Namir on 4/7/2016.
- */
-
 public class FlightinfoController implements Initializable{
 
     @FXML
@@ -42,19 +38,6 @@ public class FlightinfoController implements Initializable{
 
     @FXML
     private TableView flightTable;
-
-   /* @FXML
-    private TableColumn flightRefCol;
-    @FXML
-    private TableColumn flightFromCol;
-    @FXML
-    private TableColumn flightToCol;
-    @FXML
-    private TableColumn flightTimeCol;
-    @FXML
-    private TableColumn flightSeatsCol;
-    @FXML
-    private TableColumn flightPriceCol;*/
 
     private ObservableList<ObservableList> data;
     private BookingSession bookingSession;
@@ -100,22 +83,6 @@ public class FlightinfoController implements Initializable{
         }
     }
 
-
-
-        /*final ObservableList<Flight> data = FXCollections.observableArrayList(
-                new Flight(2433, "Helsingborg", "Mexiko", "14:30", 177, 1999),
-                new Flight(5442, "Namirs hus", "Persien", "17:20", 133, 2433)
-        );*/
-
-       /* flightRefCol.setCellValueFactory(new PropertyValueFactory<Flight, Integer>("flightRef"));
-        flightFromCol.setCellValueFactory(new PropertyValueFactory<Flight, String>("flightFrom"));
-        flightToCol.setCellValueFactory(new PropertyValueFactory<Flight, String>("flightTo"));
-        flightTimeCol.setCellValueFactory(new PropertyValueFactory<Flight, Double>("flightTime"));
-        flightSeatsCol.setCellValueFactory(new PropertyValueFactory<Flight, Integer>("flightSeats"));
-        flightPriceCol.setCellValueFactory(new PropertyValueFactory<Flight, Double>("flightPrice"));
-        flightTable.setItems(data);
-    } */
-
     @FXML
     private void backAction(ActionEvent event) throws IOException {
         Stage stage;
@@ -156,9 +123,6 @@ public class FlightinfoController implements Initializable{
         controller.setBookingSession(bs);
 
         stage = (Stage) pickBtn.getScene().getWindow();
-        //root = FXMLLoader.load(getClass().getResource("../view/FlightinfoView.fxml"));
-
-
         stage.setScene(scene);
         stage.show();
     }

@@ -20,17 +20,14 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import main.DBConnect;
 
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-/**
- * Created by HampusBolin on 2016-04-13.
- */
 public class TicketController implements Initializable {
+    
     @FXML
     private Button backBtn;
     @FXML
@@ -43,8 +40,6 @@ public class TicketController implements Initializable {
     private TableView ticketTable;
 
     private ObservableList<ObservableList> data;
-
-
 
     @FXML
     private void backAction(ActionEvent event) throws IOException {
@@ -71,6 +66,7 @@ public class TicketController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    
     @FXML
     private void homeAction(ActionEvent event) throws IOException {
         Stage stage;
@@ -87,7 +83,6 @@ public class TicketController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
 
         Connection c;
         data = FXCollections.observableArrayList();

@@ -4,9 +4,6 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-/**
- * Created by Viktor on 2016-04-11.
- */
 public class Flight {
 
     private SimpleIntegerProperty flightRef;

@@ -35,9 +35,8 @@ public class MainSceneController implements Initializable {
             stage.show();
 
         }
-
-
     }
+    
     @FXML
     private void ticketAction(ActionEvent event) throws IOException {
         Stage stage;
@@ -50,7 +49,6 @@ public class MainSceneController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

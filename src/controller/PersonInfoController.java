@@ -20,9 +20,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-/**
- * Created by Viktor on 2016-04-11.
- */
 public class PersonInfoController implements Initializable{
 
     @FXML
@@ -38,16 +35,11 @@ public class PersonInfoController implements Initializable{
     @FXML
     private TextField socNumOne;
 
-
     BookingSession bookingSession;
-
     private int names;
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
 
     }
 
@@ -76,6 +68,7 @@ public class PersonInfoController implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
+    
     @FXML
     private void bookAction(ActionEvent event) throws IOException {
         String firstName = firstNameOne.getText();
@@ -102,9 +95,6 @@ public class PersonInfoController implements Initializable{
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
-
-
     }
 
     public void setBookingSession(BookingSession bookingSession) {
